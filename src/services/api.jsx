@@ -8,9 +8,15 @@ function login(body) {
   return promise;
 }
 
+function signUp(body) {
+  const promise = axios.post(`${BASE_URL}/auth/sign-up`, body);
+
+  return promise;
+}
+
 const api ={
     login,
-
+    signUp,
 }
 
 export default api;
