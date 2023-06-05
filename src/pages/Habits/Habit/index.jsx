@@ -16,15 +16,17 @@ function Habit({ id, name, days, handleDeleteHabit }) {
     ]
 
     return (
-        <Container>
-        <Title>{name}</Title>
+        <Container data-test="habit-container">
+        <Title data-test="habit-name">{name}</Title>
         <Days>
             {weekDays.map(weekDay => (
-            <StyledDay key={weekDay.id} isSelected={days.includes(weekDay.id)}>{weekDay.day}</StyledDay>
+            <StyledDay key={weekDay.id} isSelected={days.includes(weekDay.id)} data-test="habit-day" > 
+                {weekDay.day}
+            </StyledDay>
             ))}
         </Days>
 
-        <img alt="Trash" src={TrashIcon} onClick={() => handleDeleteHabit(id)} />
+        <img alt="Trash" src={TrashIcon} onClick={() => handleDeleteHabit(id)} data-test="habit-delete-btn" />
         </Container>
     );
 }

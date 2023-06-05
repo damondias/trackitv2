@@ -58,7 +58,7 @@ function HabitsPage() {
     <Container>
       <RegisterContent>
         <Title>Meus hábitos</Title>
-        <Button onClick={() => setIsCreatingHabitFormOpen(true)}>
+        <Button onClick={() => setIsCreatingHabitFormOpen(true)} data-test="habit-create-btn">
           <img alt="plus.svg" src={Plus} />
         </Button>
       </RegisterContent>

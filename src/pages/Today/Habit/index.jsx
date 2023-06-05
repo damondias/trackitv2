@@ -16,12 +16,12 @@ function Habit({ id, name, done, currentSequence, highestSequence, loadTodayHabi
 
     function handleCheckHabit() {
         if (done) {
-        const promise = api.uncheckHabit(id, user.token);
-        promise.then(() => {
-            loadTodayHabits();
-        });
+            const promise = api.uncheckHabit(id, user.token);
+            promise.then(() => {
+                loadTodayHabits();
+            });
 
-        return;
+            return;
         }
 
         const promise = api.checkHabit(id, user.token);
@@ -32,28 +32,31 @@ function Habit({ id, name, done, currentSequence, highestSequence, loadTodayHabi
 
     return (
         <Container>
-        <DetailsContainer>
-            <Title>{name}</Title>
-            <Paragraph>
-            Sequência atual:
-            <CurrentSequence done={done}>
-                {currentSequence} {formatDayText(currentSequence)}
-            </CurrentSequence>
-            </Paragraph>
-            <Paragraph>
-            Seu recorde:
-            <HighestSequence currentSequenceIsHighest={currentSequenceIsHighest}>
-                {highestSequence} {formatDayText(highestSequence)}
-            </HighestSequence>
-            </Paragraph>
-        </DetailsContainer>
+            <DetailsContainer>
+                <Title  data-test="today-habit-name">
+                    {name}
+                </Title>
+                <Paragraph data-test="today-habit-sequence">
+                    Sequência atual:
+                    <CurrentSequence done={done}>
+                        {currentSequence} {formatDayText(currentSequence)}
+                    </CurrentSequence>
+                </Paragraph>
+                <Paragraph data-test="today-habit-record">
+                    Seu recorde:
+                    <HighestSequence currentSequenceIsHighest={currentSequenceIsHighest}>
+                        {highestSequence} {formatDayText(highestSequence)}
+                    </HighestSequence>
+                </Paragraph>
+            </DetailsContainer>
 
-        <CheckMarkContainer
-            done={done}
-            onClick={handleCheckHabit}
-        >
-            <img alt="check" src={Check} />
-        </CheckMarkContainer>
+            <CheckMarkContainer
+                done={done}
+                onClick={handleCheckHabit}
+                data-test="today-habit-check-btn"
+            >
+                <img alt="check" src={Check} />
+            </CheckMarkContainer>
         </Container>
     );
 }

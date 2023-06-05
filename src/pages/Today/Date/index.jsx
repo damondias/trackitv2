@@ -18,7 +18,9 @@ function Date() {
   }
 
   return (
-    <Paragraph>{weekDayExtended}, {date}/{month}</Paragraph>
+    <Paragraph data-test="today">
+      {weekDayExtended}, {date}/{month}
+    </Paragraph>
   )
 }
 

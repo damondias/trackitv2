@@ -6,7 +6,7 @@ function Subtitle({ doneHabitsQuantity }) {
   const { progress } = useProgress();
 
   return (
-    <Paragraph doneHabitsQuantity={doneHabitsQuantity}>
+    <Paragraph doneHabitsQuantity={doneHabitsQuantity} data-test="today-counter">
       {
         doneHabitsQuantity === 0
           ? "Nenhum hábito concluído ainda"

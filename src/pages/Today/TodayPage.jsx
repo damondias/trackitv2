@@ -42,6 +42,7 @@ function TodayPage() {
             key={habit.id}
             {...habit}
             loadTodayHabits={loadTodayHabits}
+            data-test="today-habit-container"
           />
         ))}
       </Content>

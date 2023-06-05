@@ -70,7 +70,7 @@ function CreateHabitForm({ isOpen, closeForm, loadHabits }) {
   }
 
   return (
-    <Form onSubmit={handleCreateHabit} isOpen={isOpen}>
+    <Form onSubmit={handleCreateHabit} isOpen={isOpen} data-test="habit-create-container">
       <Container>
         <Input
           placeholder="nome do hábito"
@@ -78,6 +78,7 @@ function CreateHabitForm({ isOpen, closeForm, loadHabits }) {
           onChange={(e) => setName(e.target.value)}
           value={name}
           disabled={isLoading}
+          data-test="habit-name-input"
         />
         <Days disabled={isLoading}>
           {weekDays.map((weekDay) => (
@@ -86,20 +87,17 @@ function CreateHabitForm({ isOpen, closeForm, loadHabits }) {
               {...weekDay}
               isSelected={days.includes(weekDay.id)}
               handleSelectDay={handleSelectDay}
+              data-test="habit-day" 
             />
           ))}
         </Days>
       </Container>
 
       <Footer>
-        <CloseButton
-          type="button"
-          disabled={isLoading}
-          onClick={closeForm}
-        >
+        <CloseButton type="button" disabled={isLoading} onClick={closeForm} data-test="habit-create-cancel-btn">
           Cancelar
         </CloseButton>
-        <SaveButton type="submit" disabled={isLoading}>
+        <SaveButton type="submit" disabled={isLoading} data-test="habit-create-save-btn">
           {
             isLoading
               ? <ThreeDots color="#FFFFFF" height={50} width={50} />
