@@ -1,6 +1,7 @@
 import React, { createContext, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage';
+import { useLocalStorage } from '../hooks';
+
 
 
 export const AuthContext = createContext();

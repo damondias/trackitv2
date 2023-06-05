@@ -28,7 +28,7 @@ function LoginPage (){
         setIsLoading(false);
   
         setUser(response.data);
-        navigate("/today");
+        navigate("/hoje");
       });
       promise.catch((error) => {
         setIsLoading(false);
