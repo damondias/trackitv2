@@ -31,7 +31,7 @@ function Habit({ id, name, done, currentSequence, highestSequence, loadTodayHabi
     }
 
     return (
-        <Container>
+        <Container  data-test="today-habit-container">
             <DetailsContainer>
                 <Title  data-test="today-habit-name">
                     {name}
