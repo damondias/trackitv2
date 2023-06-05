@@ -2,20 +2,25 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/useContext";
 import { LoginPage, SignUpPage, TodayPage } from "./pages";
 import Header from "./components/Header/HeaderComponent";
+import { ProgressProvider } from "./contexts/progressContext";
+import Menu from "./components/Menu/MenuComponent";
 
 function App() {
 
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Header />
-        <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/cadastro" element={<SignUpPage />} />
-            <Route path="/hoje" element={<TodayPage />} />
-            {/* <Route path="/habitos" element={<HabitsPage />} />
-            <Route path="/historico" element={<HistoricPage />} /> */}
-        </Routes>
+        <ProgressProvider>
+          <Header />
+          <Routes>
+              <Route path="/" element={<LoginPage />} />
+              <Route path="/cadastro" element={<SignUpPage />} />
+              <Route path="/hoje" element={<TodayPage />} />
+              {/* <Route path="/habitos" element={<HabitsPage />} />
+              <Route path="/historico" element={<HistoricPage />} /> */}
+          </Routes>
+          <Menu />
+        </ProgressProvider>
       </AuthProvider>
     </BrowserRouter>  
   )
