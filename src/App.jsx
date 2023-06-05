@@ -13,8 +13,8 @@ function App() {
         <ProgressProvider>
           <Header />
           <Routes>
+              <Route path="/cadastro" element={<SignUpPage />} /> 
               <Route path="/" element={<LoginPage />} />
-              <Route path="/cadastro" element={<SignUpPage />} />
               <Route path="/hoje" element={<TodayPage />} />
               <Route path="/habitos" element={<HabitsPage />} />
               <Route path="/historico" element={<HistoricPage />} /> 
