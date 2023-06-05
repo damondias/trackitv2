@@ -14,9 +14,9 @@ function Header() {
   }
 
   return (
-    <Container>
+    <Container  data-test="header">
       <MiniLogo src={logo} alt="TrackIt" onClick={() => navigate("/hoje")} />
-      <Avatar src={user.image} alt={user.name} />
+      <Avatar src={user.image} alt={user.name} data-test="avatar"/>
     </Container>
   );
 }

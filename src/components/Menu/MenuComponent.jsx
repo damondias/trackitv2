@@ -15,11 +15,11 @@ function Menu() {
   }
 
   return (
-    <Footer>
-      <Redirect to="/habitos">Hábitos</Redirect>
+    <Footer  data-test="menu">
+      <Redirect to="/habitos" data-test="habit-link" >Hábitos</Redirect>
       <ContentProgressbar>
         <CircularProgressbarContainer>
-          <Link to="/hoje">
+          <Link to="/hoje"  data-test="today-link">
             <CircularProgressbar
               value={progress}
               text={"Hoje"}
@@ -35,7 +35,7 @@ function Menu() {
           </Link>
         </CircularProgressbarContainer>
       </ContentProgressbar>
-      <Redirect to="/historico">Histórico</Redirect>
+      <Redirect to="/historico" data-test="history-link">Histórico</Redirect>
     </Footer>
   );
 }
