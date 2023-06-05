@@ -42,6 +42,11 @@ function CreateHabitForm({ isOpen, closeForm, loadHabits }) {
       return;
     }
 
+    if (name.length === 0) {
+      alert("Digite algum Hábito");
+      return;
+    }
+
     setIsLoading(true);
 
     const promise = api.createHabit({ name, days }, user.token);
@@ -55,6 +60,7 @@ function CreateHabitForm({ isOpen, closeForm, loadHabits }) {
     promise.catch((error) => {
       setIsLoading(false);
       console.log(error.response);
+      
     });
   }
 
@@ -75,7 +81,6 @@ function CreateHabitForm({ isOpen, closeForm, loadHabits }) {
       <Container>
         <Input
           placeholder="nome do hábito"
-          required
           onChange={(e) => setName(e.target.value)}
           value={name}
           disabled={isLoading}
