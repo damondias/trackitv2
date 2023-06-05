@@ -1,13 +1,12 @@
 import dayjs from 'dayjs';
-import ptBr from "dayjs/locale/pt-br";
+import "dayjs/locale/pt-br";
 import { Paragraph } from './style';
 
 
 function Date() {
   let date = dayjs().date();
   let month = dayjs().month() + 1;
-  let weekDay = dayjs().day();
-  let weekDayExtended = dayjs(weekDay).locale(ptBr).format('dddd').replace("-feira", "");
+  let weekDayExtended = dayjs().locale('pt-br').format('dddd').replace("-feira", "");
 
   if (date < 10) {
     date = 0 + date.toString();
@@ -19,7 +18,7 @@ function Date() {
 
   return (
     <Paragraph data-test="today">
-      {weekDayExtended}, {date}/{month}
+      {weekDayExtended[0].toUpperCase()+ weekDayExtended.substring(1)}, {date}/{month}
     </Paragraph>
   )
 }
