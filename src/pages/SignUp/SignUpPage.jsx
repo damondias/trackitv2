@@ -49,6 +49,7 @@ function SignUpPage (){
                     value={formData.email}
                     disabled={isLoading}
                     required
+                    data-test="email-input"
                 />
                 <Input 
                     type="password"
@@ -58,6 +59,7 @@ function SignUpPage (){
                     value={formData.password}
                     disabled={isLoading}
                     required
+                    data-test="password-input" 
                 />
                 <Input
                     type="text"
@@ -67,6 +69,7 @@ function SignUpPage (){
                     value={formData.name}
                     disabled={isLoading}
                     required
+                    data-test="user-name-input"
                 />
                 <Input
                     type="text"
@@ -76,14 +79,15 @@ function SignUpPage (){
                     value={formData.image}
                     disabled={isLoading}
                     required
+                    data-test="user-image-input"
                 />
-                <Button type="submit" disabled={isLoading}>
+                <Button type="submit" disabled={isLoading} data-test="signup-btn">
                     {
                         isLoading? <ThreeDots color="#FFFFFF" height={50} width={50} /> : "Cadastrar"
                     }
                 </Button>
             </Form>
-            <Register to="/">
+            <Register to="/" data-test="login-link">
                 Já tem uma conta? Faça login!
             </Register>
         </PageContainer>

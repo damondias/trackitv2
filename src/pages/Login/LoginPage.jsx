@@ -49,6 +49,7 @@ function LoginPage (){
                     value={formData.email}
                     disabled={isLoading}
                     required
+                    data-test="email-input"
                 />
                 <Input 
                     type="password"
@@ -58,14 +59,15 @@ function LoginPage (){
                     value={formData.password}
                     disabled={isLoading}
                     required
+                    data-test="password-input"
                 />
-                <Button type="submit" disabled={isLoading}>
+                <Button type="submit"  disabled={isLoading} data-test="login-btn">
                     {
                         isLoading? <ThreeDots color="#FFFFFF" height={50} width={50} /> : "Entrar"
                     }
                 </Button>
             </Form>
-            <Register to="/cadastro">
+            <Register to="/cadastro" data-test="signup-link">
                 Não tem uma conta? Cadastre-se!
             </Register>
         </PageContainer>
