@@ -21,6 +21,7 @@ function Day({ day, id, isSelected, handleSelectDay }) {
       <StyledDay
         onClick={() => handleSelectDay(id)}
         isSelected={isSelected}
+        data-test="habit-day" 
       >
         {day}
       </StyledDay>
@@ -87,7 +88,7 @@ function CreateHabitForm({ isOpen, closeForm, loadHabits }) {
               {...weekDay}
               isSelected={days.includes(weekDay.id)}
               handleSelectDay={handleSelectDay}
-              data-test="habit-day" 
+             
             />
           ))}
         </Days>
